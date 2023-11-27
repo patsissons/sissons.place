@@ -5,8 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev');
-const TITLE = process.env.TITLE || 'example.com';
-const CONTACT_EMAIL = process.env.EMAIL || 'contact@example.com';
+const TITLE = process.env.TITLE || 'sissons.place';
+const CONTACT_EMAIL = process.env.EMAIL || 'pat@sissons.place';
 
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'app');
