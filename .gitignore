@@ -1,14 +1,12 @@
-## System and generated files
-.idea
 .DS_Store
-.sass-cache
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
-## Directories
-log/
-dist/
-node_modules/
-bower_components/
-
-## Files
-result.xml
-npm-debug.log
+._ignore
