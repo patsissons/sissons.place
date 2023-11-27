@@ -1,15 +1,15 @@
-<script>
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-nocheck
-  import Trianglify from '@victorioberra/trianglify-browser'
+<script lang="ts">
+  import Trianglify from '$lib/trianglify'
   import debounce from 'debounce'
   import { onMount } from 'svelte'
   import '../style/app.css'
 
-  /** @type {HTMLElement} */
-  let elCanvasWrapper
+  let canvasElement: HTMLElement
 
   function drawPattern() {
+    if (!canvasElement) return
+    if (typeof window === 'undefined') return
+
     try {
       const pattern = Trianglify({
         width: window.innerWidth,
@@ -18,9 +18,8 @@
         cellSize: 80,
       })
 
-      elCanvasWrapper.innerHTML = ''
-      elCanvasWrapper.appendChild(pattern.toCanvas())
-      console.log('drawPattern')
+      canvasElement.innerHTML = ''
+      canvasElement.appendChild(pattern.toCanvas())
     } catch (error) {
       console.error(error)
     }
@@ -28,12 +27,18 @@
 
   const handleResize = debounce(drawPattern)
 
+  let clear: number
+  $: {
+    clearInterval(clear)
+    clear = setInterval(drawPattern, 1000)
+  }
+
   onMount(drawPattern)
 </script>
 
 <svelte:window on:resize={handleResize} />
 
-<section id="trianglify" bind:this={elCanvasWrapper} />
+<section id="trianglify" bind:this={canvasElement} />
 <section id="content">
   <slot />
 </section>
