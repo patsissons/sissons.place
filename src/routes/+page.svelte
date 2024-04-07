@@ -1,10 +1,7 @@
 <div class="title">
-  <h2 id="title-header">sissons.place</h2>
-</div>
-<div class="contact">
-  <a id="contact-mail" href="mailto:pat@sissons.place" target="_top">
-    pat@sissons.place
-  </a>
+  <h2 id="title-header">
+    <a href="https://wiki.sissons.place">sissons.place</a>
+  </h2>
 </div>
 
 <style>
@@ -15,18 +12,14 @@
     padding: 0;
   }
 
-  .contact {
-    margin-top: 10px;
-  }
-
-  .contact a {
-    display: inline-block;
-    margin-left: 5px;
+  .title a {
     text-decoration: none;
     color: #a8cee7;
+    transition: color 0.3s;
   }
 
-  .contact a:hover {
+  .title a:hover {
     text-decoration: underline;
+    color: hsl(204, 57%, 88%);
   }
 </style>
