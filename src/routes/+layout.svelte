@@ -38,7 +38,7 @@
 
 <svelte:window on:resize={handleResize} />
 
-<section id="trianglify" bind:this={canvasElement} />
+<section id="trianglify" bind:this={canvasElement}></section>
 <section id="content">
   <slot />
 </section>
