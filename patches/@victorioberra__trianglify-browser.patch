@@ -1,0 +1,12 @@
+diff --git a/dist/trianglify.js b/dist/trianglify.js
+index 00a077966fea6f10a9d240e295611b6546b12ea8..be70d21a44ce042b57545206fc9db93f1c3acb40 100644
+--- a/dist/trianglify.js
++++ b/dist/trianglify.js
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
++function _interopDefault (ex) { return (ex && (typeof ex === 'object' || typeof ex === 'function') && 'default' in ex) ? ex['default'] : ex; }
+ 
+ var Delaunator = _interopDefault(require('delaunator'));
+ var chroma = _interopDefault(require('chroma-js'));

@@ -1,0 +1,2 @@
+patchedDependencies:
+  '@victorioberra/trianglify-browser': patches/@victorioberra__trianglify-browser.patch
